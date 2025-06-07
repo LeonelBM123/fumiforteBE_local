@@ -31,6 +31,7 @@ public class SesionController {
     public List<Sesion> listarSesiones() {
         return sesionRepository.findAll();
     }
+    
     // GET: Listar todas las sesiones de un Solicitud
     @GetMapping("/listar/{idSolicitud}")
     public List<Sesion> listarSesionesPorSolicitud(@PathVariable Long idSolicitud){
