@@ -11,9 +11,6 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-//hola mundo
-
 public class Pago {
     @Id
     @Column(name = "id_pago")

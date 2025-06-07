@@ -54,7 +54,6 @@ public class PagoController {
     }
 
     // PUT: Actualizar Pago
-    //hola mundo
     @BitacoraLog("Actualizar Pago")
     @PutMapping("/actualizar_pago/{id}")
     public ResponseEntity<Pago> actualizarPago(@PathVariable Long id, @RequestBody Pago pagoActualizada) {
@@ -72,8 +71,7 @@ public class PagoController {
         return ResponseEntity.ok(pagoRepository.save(pagoExistente));
     }
     
-    // DELETE: Eliminar una pago xd
-    //hola mundo
+    // DELETE: Eliminar una pago
     @BitacoraLog("Eliminar Pago")
     @DeleteMapping("/eliminar_pago/{id}")
     public ResponseEntity<Void> eliminarPago(@PathVariable Long id) {
