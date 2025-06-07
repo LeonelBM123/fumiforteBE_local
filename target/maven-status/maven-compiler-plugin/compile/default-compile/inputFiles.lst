@@ -1,51 +1,51 @@
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\aspects\BitacoraAspect.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\aspects\BitacoraLog.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\config\CorsConfig.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\config\SecurityConfig.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\AuthController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CertificadoController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ClienteController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CotizacionController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\GerenteController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HomeController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ParticipaController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PlagaController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProductoController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProveedorController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PublicController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SesionController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SolicitudServicioController.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\AuthRequestDto.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionDto.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ParticipaDto.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\FumiForteApplication.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Bitacora.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\CertificadoFumigacion.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Cliente.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Cotizacion.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Gerente.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Participa.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\ParticipaId.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Plaga.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Producto.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Proveedor.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\SecurityUser.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Sesion.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\SolicitudServicio.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Trabajador.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Usuario.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\BitacoraRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\CertificadoRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ClienteRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\CotizacionRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ParticipaRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\PlagaRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ProductoRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ProveedorRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\SesionRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\SolicitudServicioRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\TrabajadorRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UserRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UsuarioRepository.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
-C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\aspects\BitacoraAspect.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\aspects\BitacoraLog.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\config\CorsConfig.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\config\SecurityConfig.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\AuthController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CertificadoController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ClienteController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CotizacionController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\GerenteController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HomeController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ParticipaController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PlagaController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProductoController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProveedorController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PublicController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SesionController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SolicitudServicioController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\AuthRequestDto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionDto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ParticipaDto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\FumiForteApplication.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Bitacora.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\CertificadoFumigacion.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Cliente.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Cotizacion.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Gerente.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Participa.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\ParticipaId.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Plaga.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Producto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Proveedor.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\SecurityUser.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Sesion.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\SolicitudServicio.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Trabajador.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\models\Usuario.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\BitacoraRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\CertificadoRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ClienteRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\CotizacionRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ParticipaRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\PlagaRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ProductoRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\ProveedorRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\SesionRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\SolicitudServicioRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\TrabajadorRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UserRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UsuarioRepository.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java

@@ -57,7 +57,7 @@ public class CotizacionController {
     @BitacoraLog("Actualizar Cotizacion")
     @PutMapping("/actualizar_cotizacion/{id}")
     @PreAuthorize("hasAuthority('Gerente')")
-    public ResponseEntity<Cotizacion> actualizarSesion(@PathVariable Long id, @RequestBody Cotizacion cotizacionActualizada) {
+    public ResponseEntity<Cotizacion> actualizarCotizacion(@PathVariable Long id, @RequestBody Cotizacion cotizacionActualizada) {
         Optional<Cotizacion> cotizacionOptional = cotizacionRepository.findById(id);
         if (cotizacionOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
