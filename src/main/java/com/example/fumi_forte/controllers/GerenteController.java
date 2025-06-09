@@ -48,6 +48,8 @@ public class GerenteController {
         return Usuarios.findAll();
     }
     
+    
+    
     @BitacoraLog("Listar Trabajadores")
     @GetMapping("/trabajadores")
     @PreAuthorize("hasAuthority('Gerente')")

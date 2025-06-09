@@ -3,6 +3,7 @@ com\example\fumi_forte\controllers\CertificadoController.class
 com\example\fumi_forte\repository\ClienteRepository.class
 com\example\fumi_forte\FumiForteApplication.class
 com\example\fumi_forte\models\Producto.class
+com\example\fumi_forte\controllers\PagoCotizacionController.class
 com\example\fumi_forte\models\SolicitudServicio.class
 com\example\fumi_forte\controllers\ProveedorController.class
 com\example\fumi_forte\models\Gerente.class
@@ -10,11 +11,14 @@ com\example\fumi_forte\repository\CotizacionRepository.class
 com\example\fumi_forte\dto\AuthRequestDto.class
 com\example\fumi_forte\controllers\PagoController.class
 com\example\fumi_forte\controllers\GerenteController.class
+com\example\fumi_forte\models\PagoCotizacion.class
 com\example\fumi_forte\repository\UsuarioRepository.class
+com\example\fumi_forte\repository\PagoCotizacionRepository.class
 com\example\fumi_forte\repository\UserRepository.class
 com\example\fumi_forte\repository\SolicitudServicioRepository.class
 com\example\fumi_forte\dto\PagoDto.class
 com\example\fumi_forte\controllers\AuthController.class
+com\example\fumi_forte\dto\UsuarioClienteDto.class
 com\example\fumi_forte\aspects\BitacoraLog.class
 com\example\fumi_forte\controllers\PlagaController.class
 com\example\fumi_forte\services\BitacoraService.class
@@ -37,6 +41,7 @@ com\example\fumi_forte\controllers\ParticipaController.class
 com\example\fumi_forte\models\Trabajador.class
 com\example\fumi_forte\models\Bitacora.class
 com\example\fumi_forte\models\SecurityUser.class
+com\example\fumi_forte\dto\UsuarioUpdateDto.class
 com\example\fumi_forte\repository\SesionRepository.class
 com\example\fumi_forte\models\Usuario.class
 com\example\fumi_forte\repository\ProveedorRepository.class
@@ -47,6 +52,7 @@ com\example\fumi_forte\repository\PagoRepository.class
 com\example\fumi_forte\models\CertificadoFumigacion.class
 com\example\fumi_forte\models\Proveedor.class
 com\example\fumi_forte\services\UserDetailsServiceImpl.class
+com\example\fumi_forte\dto\UsuarioTrabajadorDto.class
 com\example\fumi_forte\controllers\SolicitudServicioController.class
 com\example\fumi_forte\repository\BitacoraRepository.class
 com\example\fumi_forte\controllers\HomeController.class
