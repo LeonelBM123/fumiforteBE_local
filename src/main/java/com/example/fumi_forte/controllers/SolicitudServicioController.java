@@ -1,10 +1,13 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.SolicitudServicioUsuarioDto;
 import com.example.fumi_forte.models.Bitacora;
 import com.example.fumi_forte.models.Producto;
 import com.example.fumi_forte.models.SolicitudServicio;
 import com.example.fumi_forte.models.Usuario;
+import com.example.fumi_forte.models.Cliente;
+import com.example.fumi_forte.repository.ClienteRepository;
 import com.example.fumi_forte.repository.SolicitudServicioRepository;
 import com.example.fumi_forte.repository.UsuarioRepository;
 import java.math.BigDecimal;
@@ -25,6 +28,8 @@ public class SolicitudServicioController {
     private SolicitudServicioRepository solicitudServicioRepository;
     @Autowired
     private UsuarioRepository usuarios;
+    @Autowired
+    private ClienteRepository clientes;
     
     @BitacoraLog("Se creo una solicitud de Servicio")
     @PostMapping
@@ -92,5 +97,41 @@ public class SolicitudServicioController {
         solicitudExistente.setIdCertificado(solicitudActualizado.getIdCertificado());
         SolicitudServicio solicitudModificado = solicitudServicioRepository.save(solicitudExistente);
         return ResponseEntity.ok(solicitudModificado);
+    }
+    
+    // GET: Obtener datos completos de la solicitud de servicio especifica
+    @GetMapping("/solicitud_servicio_detallado/{id}")
+    public ResponseEntity<SolicitudServicioUsuarioDto> getSolicitudCompletaByID(@PathVariable Long id) {
+        Optional<SolicitudServicio> optionalSolicitud = solicitudServicioRepository.findById(id);
+
+        if (!optionalSolicitud.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        SolicitudServicio solicitud = optionalSolicitud.get();
+
+        // Obtener el cliente usando el id_cliente que ya viene en la solicitud
+        Long idCliente = solicitud.getIdCliente();
+        Optional<Cliente> optionalCliente = clientes.findById(idCliente);
+
+        if (!optionalCliente.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Cliente cliente = optionalCliente.get();
+        Usuario usuario = cliente.getUsuario();
+
+        // Construir el DTO
+        SolicitudServicioUsuarioDto dto = new SolicitudServicioUsuarioDto();
+        dto.setIdSolicitudServicio(solicitud.getIdSolicitudServicio());
+        dto.setNombre(usuario.getNombreCompleto());
+        dto.setCorreo(usuario.getCorreo());
+        dto.setTelefono(usuario.getTelefono());
+        dto.setTipoCliente(cliente.getTipoCliente());
+        dto.setEstado(solicitud.getEstado());
+        dto.setDireccionEscrita(solicitud.getDireccionEscrita());
+        dto.setUbicacionGps(solicitud.getUbicacionGps());
+
+        return ResponseEntity.ok(dto);
     }
 }

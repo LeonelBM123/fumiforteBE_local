@@ -25,6 +25,7 @@ com\example\fumi_forte\services\BitacoraService.class
 com\example\fumi_forte\repository\PlagaRepository.class
 com\example\fumi_forte\models\Sesion.class
 com\example\fumi_forte\dto\CotizacionDto.class
+com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.class
 com\example\fumi_forte\config\CorsConfig.class
 com\example\fumi_forte\controllers\ProductoController.class
 com\example\fumi_forte\models\Cliente.class
