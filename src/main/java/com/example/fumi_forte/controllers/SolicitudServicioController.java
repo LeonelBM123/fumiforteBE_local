@@ -1,13 +1,16 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.MontosPendientesDto;
 import com.example.fumi_forte.dto.SolicitudServicioUsuarioDto;
 import com.example.fumi_forte.models.Bitacora;
 import com.example.fumi_forte.models.Producto;
 import com.example.fumi_forte.models.SolicitudServicio;
 import com.example.fumi_forte.models.Usuario;
 import com.example.fumi_forte.models.Cliente;
+import com.example.fumi_forte.models.Sesion;
 import com.example.fumi_forte.repository.ClienteRepository;
+import com.example.fumi_forte.repository.SesionRepository;
 import com.example.fumi_forte.repository.SolicitudServicioRepository;
 import com.example.fumi_forte.repository.UsuarioRepository;
 import java.math.BigDecimal;
@@ -30,6 +33,8 @@ public class SolicitudServicioController {
     private UsuarioRepository usuarios;
     @Autowired
     private ClienteRepository clientes;
+    @Autowired
+    private SesionRepository sesionRepository;
     
     @BitacoraLog("Se creo una solicitud de Servicio")
     @PostMapping
@@ -134,4 +139,58 @@ public class SolicitudServicioController {
 
         return ResponseEntity.ok(dto);
     }
+    
+    // GET: Obtiene todas las solicitudes realizadas por un cliente especifico
+    @GetMapping("/solicitudes/cliente/{idCliente}")
+    public ResponseEntity<List<SolicitudServicio>> getSolicitudesByClienteId(@PathVariable Long idCliente) {
+        List<SolicitudServicio> solicitudes = solicitudServicioRepository.findByIdCliente(idCliente);
+
+        if (solicitudes.isEmpty()) {
+            return ResponseEntity.noContent().build(); // 204 si no hay nada
+        }
+
+        return ResponseEntity.ok(solicitudes); // 200 con la lista
+    }
+
+    // GET: Obtener el monto pendiente de cotizacion y sesion de un cliente especifico y servicio especifico
+    @GetMapping("/solicitudes/monto_pendiente/{idCliente}/{idSolicitudServicio}")
+    public ResponseEntity<?> obtenerMontosPendientes(
+            @PathVariable Long idCliente,
+            @PathVariable Long idSolicitudServicio) {
+
+        Optional<SolicitudServicio> solicitudOpt = solicitudServicioRepository.findById(idSolicitudServicio);
+
+        if (!solicitudOpt.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        SolicitudServicio solicitud = solicitudOpt.get();
+
+        if (!solicitud.getIdCliente().equals(idCliente)) {
+            return ResponseEntity.badRequest().body("El cliente no tiene acceso a esta solicitud.");
+        }
+
+        BigDecimal montoCotizacion = solicitud.getMontoPendienteCotizacion();
+
+        List<Sesion> sesiones = sesionRepository.findBySolicitudServicio_IdSolicitudServicio(idSolicitudServicio);
+        List<BigDecimal> montosSesion = sesiones.stream()
+                .map(Sesion::getMontoPendienteSesion)
+                .toList();
+
+        MontosPendientesDto respuesta = new MontosPendientesDto(montoCotizacion, montosSesion);
+
+        return ResponseEntity.ok(respuesta);
+    }
+    
+    // GET: Obtiene todas las solicitudes realizadas por un cliente especifico
+    @GetMapping("/solicitudes/cliente/{idCliente}")
+    public ResponseEntity<List<SolicitudServicio>> getSolicitudesByClienteId(@PathVariable Long idCliente) {
+        List<SolicitudServicio> solicitudes = solicitudServicioRepository.findByIdCliente(idCliente);
+
+        if (solicitudes.isEmpty()) {
+            return ResponseEntity.noContent().build(); // 204 si no hay nada
+        }
+
+        return ResponseEntity.ok(solicitudes); // 200 con la lista
+
 }

@@ -20,9 +20,11 @@ C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\exa
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SolicitudServicioController.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\AuthRequestDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionDto.java
+C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\MontosPendientesDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\PagoDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ParticipaDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.java
+C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\TrabajadorDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioClienteDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioTrabajadorDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioUpdateDto.java

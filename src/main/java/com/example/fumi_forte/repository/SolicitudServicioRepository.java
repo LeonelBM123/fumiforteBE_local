@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SolicitudServicioRepository extends JpaRepository<SolicitudServicio, Long> {
     List<SolicitudServicio> findByIdCertificado(Long idCertificado);
+    List<SolicitudServicio> findByIdCliente(Long idCliente);
 }

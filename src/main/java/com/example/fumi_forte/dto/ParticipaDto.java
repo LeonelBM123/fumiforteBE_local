@@ -7,5 +7,5 @@ import lombok.Data;
 @Data
 public class ParticipaDto {
     private Sesion sesion;
-    private List<Long> trabajadoresId;
+    private List<TrabajadorDto> trabajadores;
 }

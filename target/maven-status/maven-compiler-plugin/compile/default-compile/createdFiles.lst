@@ -10,6 +10,7 @@ com\example\fumi_forte\models\Gerente.class
 com\example\fumi_forte\repository\CotizacionRepository.class
 com\example\fumi_forte\dto\AuthRequestDto.class
 com\example\fumi_forte\controllers\PagoController.class
+com\example\fumi_forte\dto\TrabajadorDto.class
 com\example\fumi_forte\controllers\GerenteController.class
 com\example\fumi_forte\models\PagoCotizacion.class
 com\example\fumi_forte\repository\UsuarioRepository.class
@@ -37,6 +38,7 @@ com\example\fumi_forte\repository\TrabajadorRepository.class
 com\example\fumi_forte\repository\ProductoRepository.class
 com\example\fumi_forte\repository\PagoSesionRepository.class
 com\example\fumi_forte\controllers\ClienteController.class
+com\example\fumi_forte\dto\MontosPendientesDto.class
 com\example\fumi_forte\dto\ParticipaDto.class
 com\example\fumi_forte\controllers\ParticipaController.class
 com\example\fumi_forte\models\Trabajador.class
