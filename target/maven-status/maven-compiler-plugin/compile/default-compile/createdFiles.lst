@@ -22,7 +22,9 @@ com\example\fumi_forte\controllers\AuthController.class
 com\example\fumi_forte\dto\UsuarioClienteDto.class
 com\example\fumi_forte\aspects\BitacoraLog.class
 com\example\fumi_forte\controllers\PlagaController.class
+com\example\fumi_forte\dto\SesionMontoDto.class
 com\example\fumi_forte\services\BitacoraService.class
+com\example\fumi_forte\dto\ListaSolicitudesMontoSesionDto.class
 com\example\fumi_forte\repository\PlagaRepository.class
 com\example\fumi_forte\models\Sesion.class
 com\example\fumi_forte\dto\CotizacionDto.class

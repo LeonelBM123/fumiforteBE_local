@@ -1,7 +1,9 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.ListaSolicitudesMontoSesionDto;
 import com.example.fumi_forte.dto.MontosPendientesDto;
+import com.example.fumi_forte.dto.SesionMontoDto;
 import com.example.fumi_forte.dto.SolicitudServicioUsuarioDto;
 import com.example.fumi_forte.models.Bitacora;
 import com.example.fumi_forte.models.Producto;
@@ -182,15 +184,28 @@ public class SolicitudServicioController {
         return ResponseEntity.ok(respuesta);
     }
     
-    // GET: Obtiene todas las solicitudes realizadas por un cliente especifico
-    @GetMapping("/solicitudes/cliente/{idCliente}")
-    public ResponseEntity<List<SolicitudServicio>> getSolicitudesByClienteId(@PathVariable Long idCliente) {
+    // GET: Obtener lista de montos pendientes de sesiones dado un id cliente especifico
+    @GetMapping("/solicitudes/monto_pendiente_sesiones/{idCliente}")
+    public ResponseEntity<?> obtenerMontosPendientesSesiones(@PathVariable Long idCliente) {
+
+        // 1. Traer todas las solicitudes de ese cliente
         List<SolicitudServicio> solicitudes = solicitudServicioRepository.findByIdCliente(idCliente);
 
         if (solicitudes.isEmpty()) {
-            return ResponseEntity.noContent().build(); // 204 si no hay nada
+            return ResponseEntity.noContent().build();
         }
 
-        return ResponseEntity.ok(solicitudes); // 200 con la lista
+        // 2. Construir la respuesta
+        List<ListaSolicitudesMontoSesionDto> respuesta = solicitudes.stream().map(solicitud -> {
+            List<Sesion> sesiones = sesionRepository.findBySolicitudServicio_IdSolicitudServicio(solicitud.getIdSolicitudServicio());
 
+            List<SesionMontoDto> sesionesDto = sesiones.stream()
+                .map(s -> new SesionMontoDto(s.getIdSesion(), s.getMontoPendienteSesion(), s.getEstado()))
+                .toList();
+
+            return new ListaSolicitudesMontoSesionDto(solicitud.getIdSolicitudServicio(), sesionesDto);
+        }).toList();
+
+        return ResponseEntity.ok(respuesta);
+    }
 }
