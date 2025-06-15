@@ -1,6 +1,7 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.TrabajadorDto;
 import com.example.fumi_forte.dto.UsuarioClienteDto;
 import com.example.fumi_forte.dto.UsuarioTrabajadorDto;
 import com.example.fumi_forte.dto.UsuarioUpdateDto;
@@ -12,8 +13,10 @@ import com.example.fumi_forte.models.Trabajador;
 import com.example.fumi_forte.repository.TrabajadorRepository;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -280,5 +283,23 @@ public class ClienteController {
         }
         Usuario usuarioModificado = usuarioRepository.save(usuarioExistente);
         return ResponseEntity.ok(usuarioModificado);
+    }
+    
+    // GET: Lista los trabajadores que se encuentran activos
+    @GetMapping("/listar_trabajadores_activos")
+    public List<TrabajadorDto> listarTrabajadoresActivos() {
+        List<Trabajador> trabajadoresActivos = trabajadorRepository.findByUsuario_Estado("Activo");
+
+        return trabajadoresActivos.stream()
+                .map(t -> {
+                    TrabajadorDto dto = new TrabajadorDto();
+                    dto.setIdTrabajador(t.getIdTrabajador());
+                    dto.setNombreCompleto(t.getUsuario().getNombreCompleto());
+                    dto.setEspecialidad(t.getEspecialidad());
+                    dto.setTelefono(t.getUsuario().getTelefono());
+                    dto.setCorreo(t.getUsuario().getCorreo());
+                    return dto;
+                })
+                .collect(Collectors.toList());
     }
 }

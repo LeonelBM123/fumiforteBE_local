@@ -39,7 +39,6 @@ public class CotizacionController {
             c.getIdCotizacion(),
             c.getFecha(),
             c.getCostoCotizacion(),
-            c.getCostoSesion(),
             c.getSolicitudServicio().getIdSolicitudServicio(),
             c.getGerente().getIdGerente()
         )).toList();
@@ -66,7 +65,6 @@ public class CotizacionController {
         Cotizacion cotizacionExistente = cotizacionOptional.get();
         cotizacionExistente.setFecha(cotizacionActualizada.getFecha());
         cotizacionExistente.setCostoCotizacion(cotizacionActualizada.getCostoCotizacion());
-        cotizacionExistente.setCostoSesion(cotizacionActualizada.getCostoSesion());
 
         return ResponseEntity.ok(cotizacionRepository.save(cotizacionExistente));
     }

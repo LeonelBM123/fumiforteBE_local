@@ -12,6 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Cotizacion {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cotizacion")
     private Long idCotizacion; 
     
@@ -20,9 +21,6 @@ public class Cotizacion {
     
     @Column(name = "costo_cotizacion", nullable = false, precision = 5, scale = 2)
     private BigDecimal costoCotizacion;
-    
-    @Column(name = "costo_sesion", nullable = false, precision = 5, scale = 2)
-    private BigDecimal costoSesion;
     
     // Relación uno a uno con SolicitudServicio
     @OneToOne

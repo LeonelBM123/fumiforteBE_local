@@ -44,5 +44,4 @@ public class SolicitudServicio {
     
     @Column (name = "id_certificado")
     private Long idCertificado;
-    
-}
+}   

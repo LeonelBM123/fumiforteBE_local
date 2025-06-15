@@ -14,12 +14,12 @@ public class Participa {
     private ParticipaId id;
 
     @ManyToOne
-    @MapsId("idTrabajador")
+    @MapsId("idTrabajador")  
     @JoinColumn(name = "id_trabajador", nullable = false)
     private Trabajador trabajador;
 
     @ManyToOne
-    @MapsId("idSesion")
+    @MapsId("idSesion")      
     @JoinColumn(name = "id_sesion", nullable = false)
     private Sesion sesion;
 
@@ -28,4 +28,11 @@ public class Participa {
 
     @Column(name = "pruebas", columnDefinition = "text")
     private String pruebas;
+
+    // Constructor para crear Participa fácil, seteando id compuesto automáticamente
+    public Participa(Sesion sesion, Trabajador trabajador) {
+        this.sesion = sesion;
+        this.trabajador = trabajador;
+        this.id = new ParticipaId(trabajador.getIdTrabajador(), sesion.getIdSesion());
+    }
 }

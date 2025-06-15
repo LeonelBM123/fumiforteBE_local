@@ -131,6 +131,7 @@ public class SolicitudServicioController {
         // Construir el DTO
         SolicitudServicioUsuarioDto dto = new SolicitudServicioUsuarioDto();
         dto.setIdSolicitudServicio(solicitud.getIdSolicitudServicio());
+        dto.setIdCliente(idCliente);
         dto.setNombre(usuario.getNombreCompleto());
         dto.setCorreo(usuario.getCorreo());
         dto.setTelefono(usuario.getTelefono());

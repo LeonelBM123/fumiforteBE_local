@@ -42,6 +42,7 @@ public class PagoController {
             p.getMonto(),
             p.getTipoPago(),
             p.getNroVoucher(),
+            p.getEstado(),
             p.getCliente().getIdCliente()
         )).toList();
     }
@@ -50,6 +51,7 @@ public class PagoController {
     @BitacoraLog("Crear Pago")
     @PostMapping("/crear_pago")
     public Pago crearPago(@RequestBody Pago pago) {
+        System.out.println("Pago recibido: " + pago);
         return pagoRepository.save(pago);
     }
 

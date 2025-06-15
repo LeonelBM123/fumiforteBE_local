@@ -7,6 +7,7 @@ import com.example.fumi_forte.dto.TrabajadorDto;
 import com.example.fumi_forte.models.Sesion;
 import com.example.fumi_forte.models.Trabajador;
 import com.example.fumi_forte.repository.ParticipaRepository;
+import com.example.fumi_forte.repository.SesionRepository;
 import com.example.fumi_forte.repository.TrabajadorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,9 @@ public class ParticipaController {
     @Autowired
     private TrabajadorRepository trabajadorRepository;
 
+    @Autowired
+    private SesionRepository sesionRepository;
+    
     // GET: Listar todas las participaciones
     @GetMapping("/listar")
     public List<ParticipaDto> listarParticipaciones() {
@@ -93,8 +97,25 @@ public class ParticipaController {
 
     // POST: Crear nueva participación
     @PostMapping("/crear")
-    public Participa crearParticipacion(@RequestBody Participa participa) {
-        return participaRepository.save(participa);
+    public ResponseEntity<?> crearParticipacion(@RequestBody Map<String, Long> ids) {
+        Long idSesion = ids.get("idSesion");
+        Long idTrabajador = ids.get("idTrabajador");
+
+        if (idSesion == null || idTrabajador == null) {
+            return ResponseEntity.badRequest().body("Faltan idSesion o idTrabajador");
+        }
+
+        Sesion sesion = sesionRepository.findById(idSesion)
+                .orElseThrow(() -> new RuntimeException("Sesion no encontrada"));
+        Trabajador trabajador = trabajadorRepository.findById(idTrabajador)
+                .orElseThrow(() -> new RuntimeException("Trabajador no encontrado"));
+
+        Participa participa = new Participa(sesion, trabajador);
+        // Si tenés más datos para poner, setéalos aquí
+
+        Participa guardado = participaRepository.save(participa);
+
+        return ResponseEntity.ok(guardado);
     }
 
     // PUT: Actualizar participación
@@ -141,3 +162,4 @@ public class ParticipaController {
         }).collect(Collectors.toList());
     }
 }
+    

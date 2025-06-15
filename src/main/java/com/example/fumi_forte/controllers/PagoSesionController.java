@@ -1,11 +1,17 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.models.Pago;
 import com.example.fumi_forte.models.PagoSesion;
+import com.example.fumi_forte.models.Sesion;
+import com.example.fumi_forte.repository.PagoRepository;
 import com.example.fumi_forte.repository.PagoSesionRepository;
+import com.example.fumi_forte.repository.SesionRepository;
+import java.util.Map;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +29,10 @@ public class PagoSesionController {
     
     @Autowired
     PagoSesionRepository pagoSesionRepository;
+    @Autowired
+    private PagoRepository pagoRepository;
+    @Autowired
+    private SesionRepository sesionRepository;
     
     // GET: Obtener lista de pagos sesion
     @BitacoraLog("Listar Pagos")
@@ -33,8 +43,28 @@ public class PagoSesionController {
     
     // POST: Crear pago sesion
     @PostMapping("/crear_pago_sesion")
-    public PagoSesion crearPago(@RequestBody PagoSesion pagoSesion) {
-        return pagoSesionRepository.save(pagoSesion);
+    public ResponseEntity<?> crearPagoSesion(@RequestBody Map<String, Object> datos) {
+        try {
+            Map<String, Object> pagoMap = (Map<String, Object>) datos.get("pago");
+
+            Long idPago = Long.valueOf(pagoMap.get("idPago").toString());
+            Long idSesion = Long.valueOf(datos.get("idSesion").toString());
+
+            Pago pago = pagoRepository.findById(idPago).orElseThrow();
+            Sesion sesion = sesionRepository.findById(idSesion).orElseThrow();
+
+            PagoSesion nuevo = new PagoSesion();
+            nuevo.setPago(pago);
+            nuevo.setSesion(sesion);
+
+            pagoSesionRepository.save(nuevo);
+
+            return ResponseEntity.ok("Pago cotización creado");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
+        }
     }
     
     // DELETE: Eliminar un pago sesion

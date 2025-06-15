@@ -12,7 +12,6 @@ public class CotizacionDto {
     private Long idCotizacion;
     private LocalDate fecha;
     private BigDecimal costoCotizacion;
-    private BigDecimal costoSesion;
     private Long idSolicitudServicio;
     private Long idGerente;
 }

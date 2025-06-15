@@ -7,6 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 public class SolicitudServicioUsuarioDto {
     private Long idSolicitudServicio;
+    private Long idCliente;
     private String nombre;
     private String tipoCliente;
     private String correo;

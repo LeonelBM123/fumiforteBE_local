@@ -14,5 +14,6 @@ public class PagoDto {
     private BigDecimal monto;
     private String tipoPago;
     private String nroVoucher;
+    private String estado;
     private Long idCliente;
 }
