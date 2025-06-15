@@ -69,7 +69,6 @@ public class ClienteController {
         }
     
     // POST: Crear Usuario Cliente
-    //@BitacoraLog("Se ha registrado un nuevo Cliente")
     @PostMapping("/registrar_cliente")
     public ResponseEntity<?> registrarCliente(@RequestBody UsuarioClienteDto dto) {
         try {
@@ -108,7 +107,6 @@ public class ClienteController {
     }
 
     // POST: Crear Usuario Trabajador
-    @BitacoraLog("Se ha registrado un nuevo Trabajador")
     @PostMapping("/registrar_trabajador")
     public ResponseEntity<?> registrarTrabajador(@RequestBody UsuarioTrabajadorDto dto) {
         try {

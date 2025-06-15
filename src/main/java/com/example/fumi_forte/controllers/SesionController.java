@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/sesion")
@@ -71,6 +72,22 @@ public class SesionController {
         return ResponseEntity.ok(sesionRepository.save(sesionExistente));
     }
 
+    // PUT: Actualizar el estado de una sesion
+    @PutMapping("/cambiar_estado/{id}")
+    public ResponseEntity<?> cambiarEstado(@PathVariable Long id, @RequestBody Map<String, String> request) {
+        String nuevoEstado = request.get("estado");
+
+        Sesion sesion = sesionRepository.findById(id).orElse(null);
+        if (sesion == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sesión no encontrada");
+        }
+
+        sesion.setEstado(nuevoEstado);
+        sesionRepository.save(sesion);
+
+        return ResponseEntity.ok("Estado actualizado");
+    }
+    
     // DELETE: Eliminar sesión
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> eliminarSesion(@PathVariable Long id) {
