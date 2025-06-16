@@ -1,5 +1,6 @@
 com\example\fumi_forte\aspects\BitacoraAspect.class
 com\example\fumi_forte\controllers\CertificadoController.class
+com\example\fumi_forte\dto\AdministrarPagosDto.class
 com\example\fumi_forte\repository\ClienteRepository.class
 com\example\fumi_forte\FumiForteApplication.class
 com\example\fumi_forte\models\Producto.class
