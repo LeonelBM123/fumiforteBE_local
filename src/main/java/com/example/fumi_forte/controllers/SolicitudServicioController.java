@@ -5,8 +5,6 @@ import com.example.fumi_forte.dto.ListaSolicitudesMontoSesionDto;
 import com.example.fumi_forte.dto.MontosPendientesDto;
 import com.example.fumi_forte.dto.SesionMontoDto;
 import com.example.fumi_forte.dto.SolicitudServicioUsuarioDto;
-import com.example.fumi_forte.models.Bitacora;
-import com.example.fumi_forte.models.Producto;
 import com.example.fumi_forte.models.SolicitudServicio;
 import com.example.fumi_forte.models.Usuario;
 import com.example.fumi_forte.models.Cliente;
@@ -16,7 +14,6 @@ import com.example.fumi_forte.repository.SesionRepository;
 import com.example.fumi_forte.repository.SolicitudServicioRepository;
 import com.example.fumi_forte.repository.UsuarioRepository;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -25,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import java.util.stream.Collectors;
 
 @RestController
 
@@ -74,19 +72,10 @@ public class SolicitudServicioController {
             return ResponseEntity.notFound().build();
         }
     }
-<<<<<<< Updated upstream
-
-    // MODIFICAR
-    @PutMapping("/solicitudes/{id}")
-    public ResponseEntity<?> actualizarProducto(@PathVariable Long id,
-            @RequestBody SolicitudServicio solicitudActualizado) {
-=======
-    
-    
+   
     // PUT: Modificar solicitud de servicio especifica
     @PutMapping("/solicitudes/{id}")
     public ResponseEntity<?> actualizarSolicitudServicio(@PathVariable Long id, @RequestBody SolicitudServicio solicitudActualizado) {
->>>>>>> Stashed changes
         Optional<SolicitudServicio> solicitudOptional = solicitudServicioRepository.findById(id);
 
         if (!solicitudOptional.isPresent()) {
@@ -114,9 +103,6 @@ public class SolicitudServicioController {
         SolicitudServicio solicitudModificado = solicitudServicioRepository.save(solicitudExistente);
         return ResponseEntity.ok(solicitudModificado);
     }
-<<<<<<< Updated upstream
-
-=======
     
     // PUT: Modificar el monto de la solicitud de servicio especifica
     @PutMapping("/solicitudes/actualizar_monto/{id}")
@@ -155,7 +141,7 @@ public class SolicitudServicioController {
     }
 
     
->>>>>>> Stashed changes
+
     // GET: Obtener datos completos de la solicitud de servicio especifica
     @GetMapping("/solicitud_servicio_detallado/{id}")
     public ResponseEntity<SolicitudServicioUsuarioDto> getSolicitudCompletaByID(@PathVariable Long id) {
@@ -205,8 +191,7 @@ public class SolicitudServicioController {
         return ResponseEntity.ok(solicitudes); // 200 con la lista
     }
 
-    // GET: Obtener el monto pendiente de cotizacion y sesion de un cliente
-    // especifico y servicio especifico
+    // GET: Obtener el monto pendiente de cotizacion y sesion de un cliente especifico y servicio especifico
     @GetMapping("/solicitudes/monto_pendiente/{idCliente}/{idSolicitudServicio}")
     public ResponseEntity<?> obtenerMontosPendientes(
         @PathVariable Long idCliente,
@@ -230,11 +215,11 @@ public class SolicitudServicioController {
 
         List<BigDecimal> montosSesion = sesiones.stream()
                 .map(Sesion::getMontoPendienteSesion)
-                .toList();
+                .collect(Collectors.toList());
 
         List<String> estadosSesion = sesiones.stream()
                 .map(Sesion::getEstado)
-                .toList();
+                .collect(Collectors.toList());
 
         MontosPendientesDto respuesta = new MontosPendientesDto(
             solicitud.getIdCliente(),
@@ -246,8 +231,7 @@ public class SolicitudServicioController {
         return ResponseEntity.ok(respuesta);
     }
 
-    // GET: Obtener lista de montos pendientes de sesiones dado un id cliente
-    // especifico
+    // GET: Obtener lista de montos pendientes de sesiones dado un id cliente especifico
     @GetMapping("/solicitudes/monto_pendiente_sesiones/{idCliente}")
     public ResponseEntity<?> obtenerMontosPendientesSesiones(@PathVariable Long idCliente) {
 
