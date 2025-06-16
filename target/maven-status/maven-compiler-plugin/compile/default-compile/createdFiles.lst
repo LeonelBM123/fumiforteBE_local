@@ -35,8 +35,10 @@ com\example\fumi_forte\models\Cliente.class
 com\example\fumi_forte\config\SecurityConfig.class
 com\example\fumi_forte\repository\ParticipaRepository.class
 com\example\fumi_forte\models\ParticipaId.class
+com\example\fumi_forte\repository\CalificacionRepository.class
 com\example\fumi_forte\models\Pago.class
 com\example\fumi_forte\repository\TrabajadorRepository.class
+com\example\fumi_forte\models\Calificacion.class
 com\example\fumi_forte\repository\ProductoRepository.class
 com\example\fumi_forte\repository\PagoSesionRepository.class
 com\example\fumi_forte\controllers\ClienteController.class
@@ -65,5 +67,6 @@ com\example\fumi_forte\controllers\PagoSesionController.class
 com\example\fumi_forte\controllers\PublicController.class
 com\example\fumi_forte\models\Plaga.class
 com\example\fumi_forte\repository\CertificadoRepository.class
+com\example\fumi_forte\controllers\CalificacionController.class
 com\example\fumi_forte\models\PagoSesion.class
 com\example\fumi_forte\models\Cotizacion.class

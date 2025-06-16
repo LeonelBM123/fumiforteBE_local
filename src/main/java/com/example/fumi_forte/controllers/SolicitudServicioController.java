@@ -37,7 +37,7 @@ public class SolicitudServicioController {
     private ClienteRepository clientes;
     @Autowired
     private SesionRepository sesionRepository;
-    
+
     @BitacoraLog("Se creo una solicitud de Servicio")
     @PostMapping
     @RequestMapping("/solicitud_servicio")
@@ -47,23 +47,23 @@ public class SolicitudServicioController {
         solicitud.setIdCertificado(null);
         solicitud.setMontoPendienteCotizacion(new BigDecimal("0.00"));
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-         if (auth != null && auth.isAuthenticated()) {
-             String username = auth.getName();
-             Usuario usuario = usuarios.findByNombreCompleto(username);
-             solicitud.setIdCliente(usuario.getIdUsuario());
+        if (auth != null && auth.isAuthenticated()) {
+            String username = auth.getName();
+            Usuario usuario = usuarios.findByNombreCompleto(username);
+            solicitud.setIdCliente(usuario.getIdUsuario());
         }
         solicitudServicioRepository.save(solicitud);
         return solicitud;
     }
-    
+
     // Endpoint GET para obtener todas las solicitudes
     @RequestMapping("/solicitudes")
     @GetMapping
     public List<SolicitudServicio> getAllSolicitudes() {
         return solicitudServicioRepository.findAll();
     }
-    
-    //Obtener solicitud por id
+
+    // Obtener solicitud por id
     @GetMapping("/solicitudes/{id}")
     public ResponseEntity<SolicitudServicio> getSolicitudById(@PathVariable Long id) {
         Optional<SolicitudServicio> solicitud = solicitudServicioRepository.findById(id);
@@ -73,11 +73,11 @@ public class SolicitudServicioController {
             return ResponseEntity.notFound().build();
         }
     }
-    
-    
-    //MODIFICAR
+
+    // MODIFICAR
     @PutMapping("/solicitudes/{id}")
-    public ResponseEntity<?> actualizarProducto(@PathVariable Long id, @RequestBody SolicitudServicio solicitudActualizado) {
+    public ResponseEntity<?> actualizarProducto(@PathVariable Long id,
+            @RequestBody SolicitudServicio solicitudActualizado) {
         Optional<SolicitudServicio> solicitudOptional = solicitudServicioRepository.findById(id);
 
         if (!solicitudOptional.isPresent()) {
@@ -93,19 +93,19 @@ public class SolicitudServicioController {
         solicitudExistente.setEstado(solicitudActualizado.getEstado());
         solicitudExistente.setMontoPendienteCotizacion(solicitudActualizado.getMontoPendienteCotizacion());
         solicitudExistente.setCantidadSesiones(solicitudActualizado.getCantidadSesiones());
-        //Creo tantas sesiones como 
+        // Creo tantas sesiones como
         solicitudExistente.setRequiereCertificado(solicitudActualizado.getRequiereCertificado());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            if (auth != null && auth.isAuthenticated()) {
-                String username = auth.getName(); //luego cambiar por el correo para que no existan duplicados
-                Usuario usuario = usuarios.findByNombreCompleto(username);
-                solicitudExistente.setIdGerente(usuario.getIdUsuario());
-            }
+        if (auth != null && auth.isAuthenticated()) {
+            String username = auth.getName(); // luego cambiar por el correo para que no existan duplicados
+            Usuario usuario = usuarios.findByNombreCompleto(username);
+            solicitudExistente.setIdGerente(usuario.getIdUsuario());
+        }
         solicitudExistente.setIdCertificado(solicitudActualizado.getIdCertificado());
         SolicitudServicio solicitudModificado = solicitudServicioRepository.save(solicitudExistente);
         return ResponseEntity.ok(solicitudModificado);
     }
-    
+
     // GET: Obtener datos completos de la solicitud de servicio especifica
     @GetMapping("/solicitud_servicio_detallado/{id}")
     public ResponseEntity<SolicitudServicioUsuarioDto> getSolicitudCompletaByID(@PathVariable Long id) {
@@ -142,7 +142,7 @@ public class SolicitudServicioController {
 
         return ResponseEntity.ok(dto);
     }
-    
+
     // GET: Obtiene todas las solicitudes realizadas por un cliente especifico
     @GetMapping("/solicitudes/cliente/{idCliente}")
     public ResponseEntity<List<SolicitudServicio>> getSolicitudesByClienteId(@PathVariable Long idCliente) {
@@ -155,7 +155,8 @@ public class SolicitudServicioController {
         return ResponseEntity.ok(solicitudes); // 200 con la lista
     }
 
-    // GET: Obtener el monto pendiente de cotizacion y sesion de un cliente especifico y servicio especifico
+    // GET: Obtener el monto pendiente de cotizacion y sesion de un cliente
+    // especifico y servicio especifico
     @GetMapping("/solicitudes/monto_pendiente/{idCliente}/{idSolicitudServicio}")
     public ResponseEntity<?> obtenerMontosPendientes(
             @PathVariable Long idCliente,
@@ -184,8 +185,9 @@ public class SolicitudServicioController {
 
         return ResponseEntity.ok(respuesta);
     }
-    
-    // GET: Obtener lista de montos pendientes de sesiones dado un id cliente especifico
+
+    // GET: Obtener lista de montos pendientes de sesiones dado un id cliente
+    // especifico
     @GetMapping("/solicitudes/monto_pendiente_sesiones/{idCliente}")
     public ResponseEntity<?> obtenerMontosPendientesSesiones(@PathVariable Long idCliente) {
 
@@ -198,15 +200,28 @@ public class SolicitudServicioController {
 
         // 2. Construir la respuesta
         List<ListaSolicitudesMontoSesionDto> respuesta = solicitudes.stream().map(solicitud -> {
-            List<Sesion> sesiones = sesionRepository.findBySolicitudServicio_IdSolicitudServicio(solicitud.getIdSolicitudServicio());
+            List<Sesion> sesiones = sesionRepository
+                    .findBySolicitudServicio_IdSolicitudServicio(solicitud.getIdSolicitudServicio());
 
             List<SesionMontoDto> sesionesDto = sesiones.stream()
-                .map(s -> new SesionMontoDto(s.getIdSesion(), s.getMontoPendienteSesion(), s.getEstado()))
-                .toList();
+                    .map(s -> new SesionMontoDto(s.getIdSesion(), s.getMontoPendienteSesion(), s.getEstado()))
+                    .toList();
 
             return new ListaSolicitudesMontoSesionDto(solicitud.getIdSolicitudServicio(), sesionesDto);
         }).toList();
 
         return ResponseEntity.ok(respuesta);
+    }
+
+    // NUEVO: Obtener solicitudes del cliente autenticado
+    @GetMapping("/clienteSolicitudes")
+    public List<SolicitudServicio> getSolicitudesDelCliente() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null && auth.isAuthenticated()) {
+            String username = auth.getName();
+            Usuario usuario = usuarios.findByNombreCompleto(username);
+            return solicitudServicioRepository.findByIdClienteAndEstado(usuario.getIdUsuario(), "Aprobado");
+        }
+        return List.of();
     }
 }
