@@ -41,6 +41,7 @@ com\example\fumi_forte\repository\ProductoRepository.class
 com\example\fumi_forte\repository\PagoSesionRepository.class
 com\example\fumi_forte\controllers\ClienteController.class
 com\example\fumi_forte\dto\MontosPendientesDto.class
+com\example\fumi_forte\dto\CotizacionPendienteDto.class
 com\example\fumi_forte\dto\ParticipaDto.class
 com\example\fumi_forte\controllers\ParticipaController.class
 com\example\fumi_forte\models\Trabajador.class

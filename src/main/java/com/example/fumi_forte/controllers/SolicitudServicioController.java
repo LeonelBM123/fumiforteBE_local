@@ -209,4 +209,20 @@ public class SolicitudServicioController {
 
         return ResponseEntity.ok(respuesta);
     }
+    
+    @GetMapping("/solicitudes/monto_pendiente_cotizacion/{idCliente}")
+    public ResponseEntity<?> obtenerCotizacionesPendientes(@PathVariable Long idCliente) {
+        List<SolicitudServicio> solicitudes = solicitudServicioRepository.findByIdCliente(idCliente);
+        
+        if (solicitudes.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        // Filtrar las solicitudes con monto pendiente > 0
+        List<SolicitudServicio> solicitudesConMonto = solicitudes.stream()
+                .filter((var s) -> s.getMontoPendienteCotizacion().compareTo(BigDecimal.ZERO) > 0)
+                .toList();
+
+        return ResponseEntity.ok(solicitudesConMonto);
+}
 }
