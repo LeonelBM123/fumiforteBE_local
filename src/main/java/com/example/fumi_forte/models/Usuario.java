@@ -39,6 +39,6 @@ public class Usuario {
     @Column(nullable = false, length = 50)
     private String rol;
     
-    @Column(nullable = false, length = 15)
+    @Column(name= "estado", nullable = false, length = 15)
     private String estado;
 }
