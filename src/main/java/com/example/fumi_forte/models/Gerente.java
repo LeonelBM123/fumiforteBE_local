@@ -21,4 +21,8 @@ public class Gerente {
     @OneToOne
     @JoinColumn(name = "id_gerente", referencedColumnName = "id_usuario", insertable = false, updatable = false)
     private Usuario usuario;
+    
+    public Gerente(Long idGerente) {
+        this.idGerente = idGerente;
+    }
 }

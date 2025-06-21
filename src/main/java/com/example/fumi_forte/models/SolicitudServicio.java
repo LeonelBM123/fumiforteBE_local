@@ -44,4 +44,8 @@ public class SolicitudServicio {
     
     @Column (name = "id_certificado")
     private Long idCertificado;
+
+    public SolicitudServicio(Long idSolicitudServicio) {
+        this.idSolicitudServicio = idSolicitudServicio;
+    }
 }   

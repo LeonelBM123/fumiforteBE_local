@@ -9,6 +9,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class MontosPendientesDto {
+    private Long idCliente;
+    private Long idSolicitudServicio;
     private BigDecimal montoPendienteCotizacion;
     private List<BigDecimal> montosPendientesSesion;
+    private List<String> estadosSesiones;
 }

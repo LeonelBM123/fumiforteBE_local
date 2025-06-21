@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface SolicitudServicioRepository extends JpaRepository<SolicitudServicio, Long> {
     List<SolicitudServicio> findByIdCertificado(Long idCertificado);
     List<SolicitudServicio> findByIdCliente(Long idCliente);
+    List<SolicitudServicio> findByIdClienteAndEstado(Long idCliente, String estado);
 }

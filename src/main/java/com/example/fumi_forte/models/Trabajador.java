@@ -24,4 +24,8 @@ public class Trabajador {
     @MapsId 
     @JoinColumn(name = "id_trabajador") 
     private Usuario usuario;
+    
+    public Trabajador(Long idTrabajador) {
+        this.idTrabajador = idTrabajador;
+    }
 }

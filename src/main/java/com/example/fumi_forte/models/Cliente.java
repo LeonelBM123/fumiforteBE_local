@@ -27,4 +27,10 @@ public class Cliente {
     @MapsId 
     @JoinColumn(name = "id_cliente") 
     private Usuario usuario;
+    
+    public Cliente(Long idCliente) {
+        this.idCliente = idCliente;
+    }
 }
+
+

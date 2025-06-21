@@ -5,6 +5,7 @@ import com.example.fumi_forte.models.Sesion;
 import com.example.fumi_forte.models.SolicitudServicio;
 import com.example.fumi_forte.repository.ParticipaRepository;
 import com.example.fumi_forte.repository.SesionRepository;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -86,6 +87,22 @@ public class SesionController {
         sesionRepository.save(sesion);
 
         return ResponseEntity.ok("Estado actualizado");
+    }
+    
+    // PUT: Actualizar el monto de una sesion
+    @PutMapping("/actualizar_monto/{id}")
+    public ResponseEntity<?> cambiarMonto(@PathVariable Long id, @RequestBody Map<String, String> request) {
+        BigDecimal nuevoMonto = new BigDecimal(request.get("monto"));
+
+        Sesion sesion = sesionRepository.findById(id).orElse(null);
+        if (sesion == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sesión no encontrada");
+        }
+
+        sesion.setMontoPendienteSesion(nuevoMonto);
+        sesionRepository.save(sesion);
+
+        return ResponseEntity.ok("Monto actualizado");
     }
     
     // DELETE: Eliminar sesión

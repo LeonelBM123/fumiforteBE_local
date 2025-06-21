@@ -22,4 +22,9 @@ public class PagoSesion {
     @ManyToOne
     @JoinColumn(name = "id_sesion", nullable = false)
     private Sesion sesion;
+    
+    public PagoSesion(Pago pago, Sesion sesion) {
+        this.pago = pago;
+        this.sesion = sesion;
+    }
 }
