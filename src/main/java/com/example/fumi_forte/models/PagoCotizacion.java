@@ -22,4 +22,9 @@ public class PagoCotizacion {
     @ManyToOne
     @JoinColumn(name = "id_solicitud_servicio", nullable = false)
     private SolicitudServicio idSolicitudServicio;
+    
+    public PagoCotizacion(Pago pago, SolicitudServicio solicitudServicio) {
+        this.pago = pago;
+        this.idSolicitudServicio = solicitudServicio;
+    }
 }

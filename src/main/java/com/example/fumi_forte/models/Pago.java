@@ -36,6 +36,14 @@ public class Pago {
     @ManyToOne
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
+    
+    public Pago(BigDecimal monto, String tipoPago, String nroVoucher, Cliente cliente, String estado) {
+        this.monto = monto;
+        this.tipoPago = tipoPago;
+        this.nroVoucher = nroVoucher;
+        this.cliente = cliente;
+        this.estado = estado;
+    }
 }
 
 

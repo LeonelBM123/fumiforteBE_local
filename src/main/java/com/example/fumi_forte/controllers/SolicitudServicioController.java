@@ -1,6 +1,7 @@
 package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.DatosFinalesTTDto;
 import com.example.fumi_forte.dto.ListaSolicitudesMontoSesionDto;
 import com.example.fumi_forte.dto.MontosPendientesDto;
 import com.example.fumi_forte.dto.SesionMontoDto;
@@ -13,6 +14,7 @@ import com.example.fumi_forte.repository.ClienteRepository;
 import com.example.fumi_forte.repository.SesionRepository;
 import com.example.fumi_forte.repository.SolicitudServicioRepository;
 import com.example.fumi_forte.repository.UsuarioRepository;
+import com.example.fumi_forte.services.AsignarTareaTrabajadoresCompletoService;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -268,4 +270,20 @@ public class SolicitudServicioController {
         }
         return List.of();
     }
+    //-----------------------------------------------------------------------------------------
+    //PARA ENVIAR BIEN LA SOLICITUD DE SERVICIO CON MONTOS, TRABAJADORES, Y SESIONES ASIGNADAS
+    //-----------------------------------------------------------------------------------------
+    @Autowired
+    private AsignarTareaTrabajadoresCompletoService service;
+    @PostMapping("/enviar_datos_completos_SS")
+    public ResponseEntity<?> procesarSolicitudCompleta(@RequestBody DatosFinalesTTDto datos) {
+        try {
+            service.procesarSolicitudCompleta(datos);
+            return ResponseEntity.ok("Solicitud procesada correctamente");
+        } catch (Exception e) {
+            // Puedes loggear el error si quieres
+            return ResponseEntity.status(500).body("Error procesando la solicitud: " + e.getMessage());
+        }
+    }
+    //-----------------------------------------------------------------------------------------
 }
