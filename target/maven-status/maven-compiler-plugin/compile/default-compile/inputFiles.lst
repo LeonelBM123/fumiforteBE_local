@@ -8,6 +8,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ClienteController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CotizacionController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\GerenteController.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HistorialServiciosController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HomeController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PagoController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PagoCotizacionController.java
@@ -24,6 +25,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionPendienteDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\DatosFinalesTTDto.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\HistorialSesionesDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ListaSolicitudesMontoSesionDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\MontosPendientesDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\PagoDto.java
@@ -74,4 +76,5 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UsuarioRepository.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\AsignarTareaTrabajadoresCompletoService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\HistorialServiciosService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
