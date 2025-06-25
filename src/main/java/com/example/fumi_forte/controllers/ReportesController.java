@@ -6,9 +6,11 @@ package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.dto.BitacoraReporteDto;
 import com.example.fumi_forte.dto.CertificadoReporteDto;
+import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
+import com.example.fumi_forte.services.SolicitudReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,4 +56,14 @@ public class ReportesController {
         LocalDateTime hasta = filtros.get("hasta");
         return bitacoraService.buscarPorAccion(desde,hasta);
     }
+    
+    private final SolicitudReporteService solicitudService;
+    @PostMapping("/Solicitud")
+    public List<SolicitudReporteDto> buscarSolicitud(@RequestBody Map<String, String> filtros){
+        String estado = filtros.get("estado");
+        String requiere_certificado = filtros.get("requiere_certificado");
+        String monto_pendiente = filtros.get("monto_pendiente");
+        return solicitudService.buscarSolicitud(estado, requiere_certificado, monto_pendiente);
+    }
+    
 }

@@ -7,6 +7,7 @@ com\example\fumi_forte\dto\HistorialSesionesDto.class
 com\example\fumi_forte\dto\DatosFinalesTTDto.class
 com\example\fumi_forte\models\Producto.class
 com\example\fumi_forte\controllers\PagoCotizacionController.class
+com\example\fumi_forte\dto\SolicitudReporteDto.class
 com\example\fumi_forte\models\SolicitudServicio.class
 com\example\fumi_forte\dto\CertificadoReporteDto.class
 com\example\fumi_forte\controllers\ProveedorController.class
@@ -16,6 +17,7 @@ com\example\fumi_forte\controllers\HistorialServiciosController.class
 com\example\fumi_forte\dto\AuthRequestDto.class
 com\example\fumi_forte\controllers\PagoController.class
 com\example\fumi_forte\dto\TrabajadorDto.class
+com\example\fumi_forte\services\SolicitudReporteService.class
 com\example\fumi_forte\services\UsuarioReporteService.class
 com\example\fumi_forte\controllers\GerenteController.class
 com\example\fumi_forte\models\PagoCotizacion.class
