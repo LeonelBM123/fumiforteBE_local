@@ -16,7 +16,7 @@ public class SesionReporteService {
    @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<SesionReporteDto> buscarSesiones(Long idSolicitud, String estado, String montoPendiente) {
+    public List<SesionReporteDto> buscarSesiones(Long idSolicitud, String estado) {
         StringBuilder sql = new StringBuilder("""
             SELECT s.id_sesion, s.fecha, s.hora, s.monto_pendiente_sesion, s.estado, 
                    s.nro_sesion, s.id_solicitud_servicio
@@ -30,13 +30,6 @@ public class SesionReporteService {
         if (estado != null && !estado.isBlank()) {
             sql.append(" AND s.estado ILIKE ? ");
             params.add("%" + estado + "%");
-        }
-
-        if (montoPendiente != null && !montoPendiente.isBlank()) {
-            switch (montoPendiente.toLowerCase()) {
-                case "impaga" -> sql.append(" AND s.monto_pendiente_sesion > 0 ");
-                case "pagado" -> sql.append(" AND s.monto_pendiente_sesion = 0 ");
-            }
         }
 
         return jdbcTemplate.query(sql.toString(), params.toArray(), (rs, rowNum) -> new SesionReporteDto(

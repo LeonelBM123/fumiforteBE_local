@@ -79,8 +79,7 @@ public class ReportesController {
     public List<SesionReporteDto> buscarSesiones(@RequestBody Map<String, String> filtros) {
         Long idSolicitud = Long.parseLong(filtros.get("id_solicitud"));
         String estado = filtros.getOrDefault("estado", "");
-        String montoPendiente = filtros.getOrDefault("monto_pendiente", "");
-        return sesionService.buscarSesiones(idSolicitud, estado, montoPendiente);
+        return sesionService.buscarSesiones(idSolicitud, estado);
     }
     
     private final PagoSesionReporteService pagoSesionService;
