@@ -7,6 +7,7 @@ package com.example.fumi_forte.controllers;
 import com.example.fumi_forte.dto.BitacoraReporteDto;
 import com.example.fumi_forte.dto.CertificadoReporteDto;
 import com.example.fumi_forte.dto.PagoSesionReporteDto;
+import com.example.fumi_forte.dto.ProductoReporteDto;
 import com.example.fumi_forte.dto.SesionReporteDto;
 import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
@@ -14,6 +15,7 @@ import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
 import com.example.fumi_forte.services.PagoCotizacionReporteService;
 import com.example.fumi_forte.services.PagoSesionReporteService;
+import com.example.fumi_forte.services.ProductoReporteService;
 import com.example.fumi_forte.services.SesionReporteService;
 import com.example.fumi_forte.services.SolicitudReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
@@ -109,5 +111,10 @@ public class ReportesController {
 
         return pagoCotizacionService.buscarPagosPorFiltros2(fecha, tipoPago);
     }
-    
+    private final ProductoReporteService productoService;
+
+    @GetMapping
+    public List<ProductoReporteDto> listarProductos() {
+        return productoService.obtenerTodos();
+    }
 }
