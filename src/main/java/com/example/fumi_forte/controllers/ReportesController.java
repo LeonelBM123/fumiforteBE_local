@@ -6,14 +6,17 @@ package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.dto.BitacoraReporteDto;
 import com.example.fumi_forte.dto.CertificadoReporteDto;
+import com.example.fumi_forte.dto.PagoSesionReporteDto;
 import com.example.fumi_forte.dto.SesionReporteDto;
 import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
+import com.example.fumi_forte.services.PagoSesionReporteService;
 import com.example.fumi_forte.services.SesionReporteService;
 import com.example.fumi_forte.services.SolicitudReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
@@ -78,5 +81,18 @@ public class ReportesController {
         return sesionService.buscarSesiones(idSolicitud, estado, montoPendiente);
     }
     
-    
+    private final PagoSesionReporteService pagoSesionService;
+
+    @PostMapping("/pago-sesion")
+    public List<PagoSesionReporteDto> buscarPagos(@RequestBody Map<String, String> filtros) {
+        String fechaStr = filtros.get("fecha");
+        String tipoPago = filtros.get("tipo_pago");
+
+        LocalDate fecha = null;
+        if (fechaStr != null && !fechaStr.isBlank()) {
+            fecha = LocalDate.parse(fechaStr);
+        }
+
+        return pagoSesionService.buscarPagosPorFiltros(fecha, tipoPago);
+    }
 }
