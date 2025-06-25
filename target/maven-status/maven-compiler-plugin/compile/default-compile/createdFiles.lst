@@ -3,6 +3,7 @@ com\example\fumi_forte\controllers\CertificadoController.class
 com\example\fumi_forte\dto\AdministrarPagosDto.class
 com\example\fumi_forte\repository\ClienteRepository.class
 com\example\fumi_forte\FumiForteApplication.class
+com\example\fumi_forte\dto\HistorialSesionesDto.class
 com\example\fumi_forte\dto\DatosFinalesTTDto.class
 com\example\fumi_forte\models\Producto.class
 com\example\fumi_forte\controllers\PagoCotizacionController.class
@@ -10,19 +11,23 @@ com\example\fumi_forte\models\SolicitudServicio.class
 com\example\fumi_forte\controllers\ProveedorController.class
 com\example\fumi_forte\models\Gerente.class
 com\example\fumi_forte\repository\CotizacionRepository.class
+com\example\fumi_forte\controllers\HistorialServiciosController.class
 com\example\fumi_forte\dto\AuthRequestDto.class
 com\example\fumi_forte\controllers\PagoController.class
 com\example\fumi_forte\dto\TrabajadorDto.class
 com\example\fumi_forte\controllers\GerenteController.class
 com\example\fumi_forte\models\PagoCotizacion.class
 com\example\fumi_forte\repository\UsuarioRepository.class
+com\example\fumi_forte\services\ReporteServicioService.class
 com\example\fumi_forte\dto\SesionDto.class
 com\example\fumi_forte\repository\PagoCotizacionRepository.class
 com\example\fumi_forte\repository\UserRepository.class
+com\example\fumi_forte\controllers\ReporteServicioController.class
 com\example\fumi_forte\repository\SolicitudServicioRepository.class
 com\example\fumi_forte\dto\PagoDto.class
 com\example\fumi_forte\controllers\AuthController.class
 com\example\fumi_forte\dto\UsuarioClienteDto.class
+com\example\fumi_forte\services\HistorialServiciosService.class
 com\example\fumi_forte\aspects\BitacoraLog.class
 com\example\fumi_forte\controllers\PlagaController.class
 com\example\fumi_forte\dto\SesionMontoDto.class
@@ -74,4 +79,5 @@ com\example\fumi_forte\models\Plaga.class
 com\example\fumi_forte\repository\CertificadoRepository.class
 com\example\fumi_forte\controllers\CalificacionController.class
 com\example\fumi_forte\models\PagoSesion.class
+com\example\fumi_forte\dto\ReporteServicioDto.class
 com\example\fumi_forte\models\Cotizacion.class

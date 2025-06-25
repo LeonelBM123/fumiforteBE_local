@@ -8,6 +8,7 @@ C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumifort
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ClienteController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\CotizacionController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\GerenteController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HistorialServiciosController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\HomeController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PagoController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PagoCotizacionController.java
@@ -17,6 +18,7 @@ C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumifort
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProductoController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProveedorController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PublicController.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ReporteServicioController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SesionController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SolicitudServicioController.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\AdministrarPagosDto.java
@@ -24,10 +26,12 @@ C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumifort
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\CotizacionPendienteDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\DatosFinalesTTDto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\HistorialSesionesDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ListaSolicitudesMontoSesionDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\MontosPendientesDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\PagoDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ParticipaDto.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ReporteServicioDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SesionDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SesionMontoDto.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.java
@@ -74,4 +78,6 @@ C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumifort
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\repository\UsuarioRepository.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\AsignarTareaTrabajadoresCompletoService.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\HistorialServiciosService.java
+C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\ReporteServicioService.java
 C:\Users\HP\Documents\SISTEMAS DE INFORMACION 1\FumiForte_no_desplegado\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
