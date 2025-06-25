@@ -18,7 +18,7 @@ public class SolicitudReporteService {
     private JdbcTemplate jdbcTemplate;
  
 
-    public List<SolicitudReporteDto> buscarSolicitud(String estado, String requiere_certificado, String monto_pendiente) {
+    public List<SolicitudReporteDto> buscarSolicitud(String estado, String requiere_certificado) {
         StringBuilder sql = new StringBuilder("""
             SELECT id_solicitud_servicio, descripcion, ubicacion_gps, direccion_escrita,
                    estado, monto_pendiente_cotizacion, cantidad_sesiones,
@@ -37,16 +37,6 @@ public class SolicitudReporteService {
         if (requiere_certificado != null && !requiere_certificado.isBlank()) {
             sql.append(" AND requiere_certificado ILIKE ? ");
             params.add("%" + requiere_certificado + "%");
-        }
-
-        if (monto_pendiente != null && !monto_pendiente.isBlank()) {
-            switch (monto_pendiente.toLowerCase()) {
-                case "impaga" -> sql.append(" AND monto_pendiente_cotizacion > 0 ");
-                case "pagado" -> sql.append(" AND monto_pendiente_cotizacion = 0 ");
-                default -> {
-                    // No se filtra nada si es otro valor
-                }
-            }
         }
 
         return jdbcTemplate.query(sql.toString(), params.toArray(), (rs, rowNum) -> new SolicitudReporteDto(
