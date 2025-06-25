@@ -20,7 +20,7 @@ public class UsuarioReporteService {
             SELECT id_usuario, nombre_completo, correo, estado, rol, telefono, direccion
             FROM usuario
             WHERE nombre_completo like ? AND estado like ? AND rol like ?
-            ORDER BY nombre_completo desc
+            ORDER BY nombre_completo asc
         """;
 
         return jdbcTemplate.query(sql, new Object[]{nombre, estado, rol}, (rs, rowNum) -> {

@@ -4,7 +4,9 @@
  */
 package com.example.fumi_forte.controllers;
 
+import com.example.fumi_forte.dto.CertificadoReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
+import com.example.fumi_forte.services.CertificadoReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
 import java.util.List;
 import java.util.Map;
@@ -31,5 +33,13 @@ public class ReportesController {
         String estado = "%"+filtros.get("estado")+"%";
         String rol = "%"+filtros.get("rol")+"%";
         return usuarioService.buscarUsuarios(nombre, estado, rol);
+    }
+    
+    private final CertificadoReporteService certificadoService;
+
+    @PostMapping("/certificados")
+    public List<CertificadoReporteDto> buscarPorEstado(@RequestBody Map<String, String> filtros) {
+        String estado = filtros.get("estado");
+        return certificadoService.buscarPorEstado(estado);
     }
 }
