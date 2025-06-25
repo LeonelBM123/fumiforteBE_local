@@ -70,8 +70,7 @@ public class ReportesController {
     public List<SolicitudReporteDto> buscarSolicitud(@RequestBody Map<String, String> filtros){
         String estado = filtros.get("estado");
         String requiere_certificado = filtros.get("requiere_certificado");
-        String monto_pendiente = filtros.get("monto_pendiente");
-        return solicitudService.buscarSolicitud(estado, requiere_certificado, monto_pendiente);
+        return solicitudService.buscarSolicitud(estado, requiere_certificado);
     }
     
     private final SesionReporteService sesionService;
@@ -80,8 +79,7 @@ public class ReportesController {
     public List<SesionReporteDto> buscarSesiones(@RequestBody Map<String, String> filtros) {
         Long idSolicitud = Long.parseLong(filtros.get("id_solicitud"));
         String estado = filtros.getOrDefault("estado", "");
-        String montoPendiente = filtros.getOrDefault("monto_pendiente", "");
-        return sesionService.buscarSesiones(idSolicitud, estado, montoPendiente);
+        return sesionService.buscarSesiones(idSolicitud, estado);
     }
     
     private final PagoSesionReporteService pagoSesionService;
