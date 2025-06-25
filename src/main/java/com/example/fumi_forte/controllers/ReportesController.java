@@ -4,10 +4,13 @@
  */
 package com.example.fumi_forte.controllers;
 
+import com.example.fumi_forte.dto.BitacoraReporteDto;
 import com.example.fumi_forte.dto.CertificadoReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
+import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
@@ -41,5 +44,14 @@ public class ReportesController {
     public List<CertificadoReporteDto> buscarPorEstado(@RequestBody Map<String, String> filtros) {
         String estado = filtros.get("estado");
         return certificadoService.buscarPorEstado(estado);
+    }
+    
+    private final BitacoraReporteService bitacoraService;
+
+    @PostMapping("/bitacora")
+    public List<BitacoraReporteDto> buscarPorAccion(@RequestBody Map<String, LocalDateTime> filtros) {
+        LocalDateTime desde = filtros.get("desde");
+        LocalDateTime hasta = filtros.get("hasta");
+        return bitacoraService.buscarPorAccion(desde,hasta);
     }
 }

@@ -8,6 +8,7 @@ com\example\fumi_forte\dto\DatosFinalesTTDto.class
 com\example\fumi_forte\models\Producto.class
 com\example\fumi_forte\controllers\PagoCotizacionController.class
 com\example\fumi_forte\models\SolicitudServicio.class
+com\example\fumi_forte\dto\CertificadoReporteDto.class
 com\example\fumi_forte\controllers\ProveedorController.class
 com\example\fumi_forte\models\Gerente.class
 com\example\fumi_forte\repository\CotizacionRepository.class
@@ -56,6 +57,7 @@ com\example\fumi_forte\controllers\ReportesController.class
 com\example\fumi_forte\controllers\ParticipaController.class
 com\example\fumi_forte\models\Trabajador.class
 com\example\fumi_forte\models\Bitacora.class
+com\example\fumi_forte\services\BitacoraReporteService.class
 com\example\fumi_forte\models\SecurityUser.class
 com\example\fumi_forte\dto\UsuarioUpdateDto.class
 com\example\fumi_forte\repository\SesionRepository.class
@@ -66,11 +68,13 @@ com\example\fumi_forte\controllers\SesionController.class
 com\example\fumi_forte\controllers\CotizacionController.class
 com\example\fumi_forte\models\Participa.class
 com\example\fumi_forte\repository\PagoRepository.class
+com\example\fumi_forte\dto\BitacoraReporteDto.class
 com\example\fumi_forte\models\CertificadoFumigacion.class
 com\example\fumi_forte\models\Proveedor.class
 com\example\fumi_forte\services\UserDetailsServiceImpl.class
 com\example\fumi_forte\dto\UsuarioTrabajadorDto.class
 com\example\fumi_forte\controllers\SolicitudServicioController.class
+com\example\fumi_forte\services\CertificadoReporteService.class
 com\example\fumi_forte\repository\BitacoraRepository.class
 com\example\fumi_forte\controllers\HomeController.class
 com\example\fumi_forte\controllers\PagoSesionController.class
