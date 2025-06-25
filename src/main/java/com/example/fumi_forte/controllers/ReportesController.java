@@ -12,6 +12,7 @@ import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
+import com.example.fumi_forte.services.PagoCotizacionReporteService;
 import com.example.fumi_forte.services.PagoSesionReporteService;
 import com.example.fumi_forte.services.SesionReporteService;
 import com.example.fumi_forte.services.SolicitudReporteService;
@@ -95,4 +96,18 @@ public class ReportesController {
 
         return pagoSesionService.buscarPagosPorFiltros(fecha, tipoPago);
     }
+    
+    private final PagoCotizacionReporteService pagoCotizacionService;
+    @PostMapping("/pago-cotizacion")
+    public List<PagoSesionReporteDto> buscarPagos2(@RequestBody Map<String, String> filtros) {
+        String fechaStr = filtros.get("fecha");
+        String tipoPago = filtros.get("tipo_pago");
+        LocalDate fecha = null;
+        if (fechaStr != null && !fechaStr.isBlank()) {
+            fecha = LocalDate.parse(fechaStr);
+        }
+
+        return pagoCotizacionService.buscarPagosPorFiltros2(fecha, tipoPago);
+    }
+    
 }
