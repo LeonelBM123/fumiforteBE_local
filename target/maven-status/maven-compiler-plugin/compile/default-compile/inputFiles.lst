@@ -35,6 +35,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\ParticipaDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SesionDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SesionMontoDto.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SesionReporteDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudReporteDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\TrabajadorDto.java
@@ -84,6 +85,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\CertificadoReporteService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\HistorialServiciosService.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\SesionReporteService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\SolicitudReporteService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UsuarioReporteService.java

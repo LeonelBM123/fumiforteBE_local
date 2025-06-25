@@ -22,6 +22,7 @@ com\example\fumi_forte\services\UsuarioReporteService.class
 com\example\fumi_forte\controllers\GerenteController.class
 com\example\fumi_forte\models\PagoCotizacion.class
 com\example\fumi_forte\repository\UsuarioRepository.class
+com\example\fumi_forte\services\SesionReporteService.class
 com\example\fumi_forte\dto\SesionDto.class
 com\example\fumi_forte\repository\PagoCotizacionRepository.class
 com\example\fumi_forte\repository\UserRepository.class
@@ -42,6 +43,7 @@ com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.class
 com\example\fumi_forte\config\CorsConfig.class
 com\example\fumi_forte\controllers\ProductoController.class
 com\example\fumi_forte\models\Cliente.class
+com\example\fumi_forte\dto\SesionReporteDto.class
 com\example\fumi_forte\config\SecurityConfig.class
 com\example\fumi_forte\repository\ParticipaRepository.class
 com\example\fumi_forte\models\ParticipaId.class

@@ -6,10 +6,12 @@ package com.example.fumi_forte.controllers;
 
 import com.example.fumi_forte.dto.BitacoraReporteDto;
 import com.example.fumi_forte.dto.CertificadoReporteDto;
+import com.example.fumi_forte.dto.SesionReporteDto;
 import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.services.BitacoraReporteService;
 import com.example.fumi_forte.services.CertificadoReporteService;
+import com.example.fumi_forte.services.SesionReporteService;
 import com.example.fumi_forte.services.SolicitudReporteService;
 import com.example.fumi_forte.services.UsuarioReporteService;
 import java.time.LocalDateTime;
@@ -65,5 +67,16 @@ public class ReportesController {
         String monto_pendiente = filtros.get("monto_pendiente");
         return solicitudService.buscarSolicitud(estado, requiere_certificado, monto_pendiente);
     }
+    
+    private final SesionReporteService sesionService;
+
+    @PostMapping("/sesiones")
+    public List<SesionReporteDto> buscarSesiones(@RequestBody Map<String, String> filtros) {
+        Long idSolicitud = Long.parseLong(filtros.get("id_solicitud"));
+        String estado = filtros.getOrDefault("estado", "");
+        String montoPendiente = filtros.getOrDefault("monto_pendiente", "");
+        return sesionService.buscarSesiones(idSolicitud, estado, montoPendiente);
+    }
+    
     
 }
