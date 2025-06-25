@@ -18,6 +18,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProductoController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ProveedorController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\PublicController.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\ReportesController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SesionController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\controllers\SolicitudServicioController.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\AdministrarPagosDto.java
@@ -35,6 +36,7 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\TrabajadorDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioClienteDto.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioReporteDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioTrabajadorDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioUpdateDto.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\FumiForteApplication.java
@@ -78,3 +80,4 @@ C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\examp
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\BitacoraService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\HistorialServiciosService.java
 C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
+C:\Users\PC\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UsuarioReporteService.java

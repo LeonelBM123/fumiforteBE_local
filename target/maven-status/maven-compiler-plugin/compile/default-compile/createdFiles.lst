@@ -15,6 +15,7 @@ com\example\fumi_forte\controllers\HistorialServiciosController.class
 com\example\fumi_forte\dto\AuthRequestDto.class
 com\example\fumi_forte\controllers\PagoController.class
 com\example\fumi_forte\dto\TrabajadorDto.class
+com\example\fumi_forte\services\UsuarioReporteService.class
 com\example\fumi_forte\controllers\GerenteController.class
 com\example\fumi_forte\models\PagoCotizacion.class
 com\example\fumi_forte\repository\UsuarioRepository.class
@@ -51,6 +52,7 @@ com\example\fumi_forte\controllers\ClienteController.class
 com\example\fumi_forte\dto\MontosPendientesDto.class
 com\example\fumi_forte\dto\CotizacionPendienteDto.class
 com\example\fumi_forte\dto\ParticipaDto.class
+com\example\fumi_forte\controllers\ReportesController.class
 com\example\fumi_forte\controllers\ParticipaController.class
 com\example\fumi_forte\models\Trabajador.class
 com\example\fumi_forte\models\Bitacora.class
@@ -75,6 +77,7 @@ com\example\fumi_forte\controllers\PagoSesionController.class
 com\example\fumi_forte\controllers\PublicController.class
 com\example\fumi_forte\models\Plaga.class
 com\example\fumi_forte\repository\CertificadoRepository.class
+com\example\fumi_forte\dto\UsuarioReporteDto.class
 com\example\fumi_forte\controllers\CalificacionController.class
 com\example\fumi_forte\models\PagoSesion.class
 com\example\fumi_forte\models\Cotizacion.class
