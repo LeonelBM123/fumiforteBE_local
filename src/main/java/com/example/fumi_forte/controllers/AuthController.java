@@ -57,46 +57,52 @@ public class AuthController {
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            // ✅ Guarda la autenticación en la sesión manualmente
             HttpSession session = httpRequest.getSession(true);
             session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                     SecurityContextHolder.getContext());
-                    
-            //mandarId
-            // Obtener el ID del usuario autenticado
+
             Object principal = authentication.getPrincipal();
             Long userId = null;
+            String nombreCompleto = null;
 
             if (principal instanceof SecurityUser securityUser) {
-                userId = securityUser.getUser().getIdUsuario(); // 👈 Aquí accedes al ID
-                session.setAttribute("userId", userId);
+                userId = securityUser.getUser().getIdUsuario();
+                nombreCompleto = securityUser.getUser().getNombreCompleto();
+
+                session.setAttribute("userId", userId); // ✅ Guardar ID en sesión
+                session.setAttribute("userNombre", nombreCompleto); // ✅ Guardar nombre en sesión
             }
-            
+
             Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
             List<String> roles = authorities.stream()
                     .map(GrantedAuthority::getAuthority)
                     .toList();
 
-            // Retornar las roles junto al mensaje
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Autenticación Exitosa");
             response.put("authorities", roles);
             response.put("userId", userId);
+            response.put("nombreCompleto", nombreCompleto);
             return ResponseEntity.ok(response);
-            //return ResponseEntity.ok(Collections.singletonMap("message","Autentificacion Exitosa"));
+
         } catch (AuthenticationException ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Collections.singletonMap("message", "Credenciales Invalidas"));
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Collections.singletonMap("message", "Credenciales inválidas"));
         }
     }
-    
+
     @GetMapping("/get_iduser")
     public ResponseEntity<?> getSessionInfo(HttpSession session) {
         Object userId = session.getAttribute("userId");
+        Object userNombre = session.getAttribute("userNombre");
 
-        if (userId == null) {
+        if (userId == null || userNombre == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario no autenticado");
         }
 
-        return ResponseEntity.ok(Map.of("userId", userId));
+        return ResponseEntity.ok(Map.of(
+                "userId", userId,
+                "nombreCompleto", userNombre
+        ));
     }
 }

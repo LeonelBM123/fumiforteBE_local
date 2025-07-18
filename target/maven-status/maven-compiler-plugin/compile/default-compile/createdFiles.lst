@@ -20,6 +20,7 @@ com\example\fumi_forte\controllers\AuthController.class
 com\example\fumi_forte\services\HistorialServiciosService.class
 com\example\fumi_forte\services\BitacoraService.class
 com\example\fumi_forte\repository\PlagaRepository.class
+com\example\fumi_forte\dto\AdminDashboardDto.class
 com\example\fumi_forte\config\CorsConfig.class
 com\example\fumi_forte\controllers\ProductoController.class
 com\example\fumi_forte\models\Cliente.class
@@ -39,6 +40,7 @@ com\example\fumi_forte\services\AsignarTareaTrabajadoresCompletoService.class
 com\example\fumi_forte\controllers\CotizacionController.class
 com\example\fumi_forte\dto\ProductoReporteDto.class
 com\example\fumi_forte\models\Participa.class
+com\example\fumi_forte\dto\ProductoDto.class
 com\example\fumi_forte\models\CertificadoFumigacion.class
 com\example\fumi_forte\models\Proveedor.class
 com\example\fumi_forte\services\UserDetailsServiceImpl.class
@@ -65,6 +67,7 @@ com\example\fumi_forte\services\PagoCotizacionReporteService.class
 com\example\fumi_forte\controllers\ReporteServicioController.class
 com\example\fumi_forte\repository\SolicitudServicioRepository.class
 com\example\fumi_forte\dto\PagoDto.class
+com\example\fumi_forte\services\AdminDashboardServiceImpl.class
 com\example\fumi_forte\dto\UsuarioClienteDto.class
 com\example\fumi_forte\aspects\BitacoraLog.class
 com\example\fumi_forte\controllers\PlagaController.class
@@ -78,10 +81,12 @@ com\example\fumi_forte\repository\ParticipaRepository.class
 com\example\fumi_forte\models\ParticipaId.class
 com\example\fumi_forte\models\Pago.class
 com\example\fumi_forte\repository\ProductoRepository.class
+com\example\fumi_forte\dto\KPIsDto.class
 com\example\fumi_forte\dto\CotizacionPendienteDto.class
 com\example\fumi_forte\dto\ParticipaDto.class
 com\example\fumi_forte\controllers\ReportesController.class
 com\example\fumi_forte\models\Bitacora.class
+com\example\fumi_forte\services\AdminDashboardService.class
 com\example\fumi_forte\services\BitacoraReporteService.class
 com\example\fumi_forte\models\SecurityUser.class
 com\example\fumi_forte\repository\SesionRepository.class
@@ -93,6 +98,7 @@ com\example\fumi_forte\dto\BitacoraReporteDto.class
 com\example\fumi_forte\dto\UsuarioTrabajadorDto.class
 com\example\fumi_forte\controllers\SolicitudServicioController.class
 com\example\fumi_forte\services\ProductoReporteService.class
+com\example\fumi_forte\controllers\AdminDashboardController.class
 com\example\fumi_forte\controllers\PublicController.class
 com\example\fumi_forte\models\Plaga.class
 com\example\fumi_forte\dto\UsuarioReporteDto.class

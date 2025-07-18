@@ -15,4 +15,10 @@ public class SolicitudServicioUsuarioDto {
     private String estado;
     private String direccionEscrita;
     private String ubicacionGps;
+    
+    public SolicitudServicioUsuarioDto(Long idSolicitudServicio, Long idCliente, String nombre) {
+        this.idSolicitudServicio = idSolicitudServicio;
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+    }
 }
