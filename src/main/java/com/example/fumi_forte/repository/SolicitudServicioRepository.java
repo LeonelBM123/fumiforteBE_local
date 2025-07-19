@@ -4,6 +4,7 @@ import com.example.fumi_forte.dto.SolicitudReporteDto;
 import com.example.fumi_forte.dto.SolicitudServicioUsuarioDto;
 import com.example.fumi_forte.models.SolicitudServicio;
 import java.util.List;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,18 +17,18 @@ public interface SolicitudServicioRepository extends JpaRepository<SolicitudServ
     
     @Query("""
         SELECT new com.example.fumi_forte.dto.SolicitudServicioUsuarioDto(
-            s.idSolicitudServicio,
-            s.idCliente,
+            ss.idSolicitudServicio,
+            ss.idCliente,
             u.nombreCompleto
         )
-        FROM SolicitudServicio s
-        JOIN Cliente c ON c.idCliente = s.idCliente
+        FROM SolicitudServicio ss
+        JOIN Cliente c ON c.idCliente = ss.idCliente
         JOIN Usuario u ON u.idUsuario = c.idCliente
-        WHERE s.estado = 'PENDIENTE'
+        WHERE ss.estado = 'Pendiente'
+        ORDER BY ss.idSolicitudServicio DESC
     """)
-    List<SolicitudServicioUsuarioDto> findSolicitudesPendientes();
+    List<SolicitudServicioUsuarioDto> findUltimasSolicitudesPendientes(Pageable pageable);
 
     
     long countByEstado(String estado);
-
 }

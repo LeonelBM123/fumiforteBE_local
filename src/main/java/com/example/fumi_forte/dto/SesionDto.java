@@ -13,12 +13,14 @@ public class SesionDto {
     private BigDecimal monto;
     private Short sesion;
     private List<Long> trabajadores;
+    private String estado;
     
     // Constructor sin la lista para usar con JPQL
-    public SesionDto(LocalDate fecha, LocalTime hora, BigDecimal monto, Short sesion) {
+    public SesionDto(LocalDate fecha, LocalTime hora, BigDecimal monto, Short sesion, String estado) {
         this.fecha = fecha;
         this.hora = hora;
         this.monto = monto;
         this.sesion = sesion;
+        this.estado = estado;
     }
 }

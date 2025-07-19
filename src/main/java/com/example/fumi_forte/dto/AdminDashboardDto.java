@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 public class AdminDashboardDto {
     private KPIsDto kpis;
-    private List<TrabajadorDto> trabajdores;
+    private List<UsuarioTrabajadorDto> trabajadores;
     private List<SolicitudServicioUsuarioDto> solicitudes;
     private List<UsuarioClienteDto> clientes;
     private List<SesionDto> calendario;

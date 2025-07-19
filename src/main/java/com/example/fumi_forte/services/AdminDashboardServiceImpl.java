@@ -28,22 +28,22 @@ public class AdminDashboardServiceImpl implements AdminDashboardService {
     public AdminDashboardDto obtenerDatosDashboard() {
         KPIsDto kpis = calcularKPIs();
 
-        List<TrabajadorDto> trabajadores = trabajadorRepository.findAllActivos();
-        List<SolicitudServicioUsuarioDto> solicitudes = solicitudRepository.findSolicitudesPendientes();
-        List<UsuarioClienteDto> clientes = usuarioRepository.findClientesConDatos(PageRequest.of(0, 5));
-        List<SesionDto> calendario = sesionRepository.findSesionesFuturas();
+        List<UsuarioTrabajadorDto> trabajadores = trabajadorRepository.findUsuariosTrabajadoresActivos();
+        List<SolicitudServicioUsuarioDto> solicitudes = solicitudRepository.findUltimasSolicitudesPendientes(PageRequest.of(0, 5));
+        List<UsuarioClienteDto> clientes = usuarioRepository.findClientesActivos(PageRequest.of(0, 5));
+        List<SesionDto> calendario = sesionRepository.findSesionesFuturasDelMes();
         List<ProductoDto> inventario = productoRepository.findInventario();
 
         return new AdminDashboardDto(kpis, trabajadores, solicitudes, clientes, calendario, inventario);
     }
 
     private KPIsDto calcularKPIs() {
-        long completados = sesionRepository.countByEstado("COMPLETADO");
-        long programados = sesionRepository.countByEstado("PROGRAMADO");
-        long solicitudesPendientes = solicitudRepository.countByEstado("PENDIENTE");
+        long completados = sesionRepository.countByEstadoEnMesActual("Realizado");
+        long pendientes = sesionRepository.countByEstadoEnMesActual("Pendiente");
+        long solicitudesPendientes = solicitudRepository.countByEstado("Pendiente");
         BigDecimal ingresos = Optional.ofNullable(pagoRepository.sumMontosPagadosMesActual())
         .orElse(BigDecimal.ZERO);
 
-        return new KPIsDto(completados, programados, solicitudesPendientes, ingresos != null ? ingresos : BigDecimal.ZERO);
+        return new KPIsDto(completados, pendientes, solicitudesPendientes, ingresos != null ? ingresos : BigDecimal.ZERO);
     }
 }

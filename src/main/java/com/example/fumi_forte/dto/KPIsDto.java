@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 public class KPIsDto {
     private long serviciosCompletados;
-    private long serviciosProgramados;
+    private long serviciosPendientes;
     private long solicitudesPendientes;
     private BigDecimal totalIngresos;
 }

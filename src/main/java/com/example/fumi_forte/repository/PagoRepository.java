@@ -9,7 +9,7 @@ public interface PagoRepository extends JpaRepository<Pago, Long>{
     @Query("""
         SELECT COALESCE(SUM(p.monto), 0)
         FROM Pago p
-        WHERE p.estado = 'PAGADO'
+        WHERE p.estado = 'Pagado'
         AND EXTRACT(MONTH FROM p.fecha) = EXTRACT(MONTH FROM CURRENT_DATE)
         AND EXTRACT(YEAR FROM p.fecha) = EXTRACT(YEAR FROM CURRENT_DATE)
     """)

@@ -7,6 +7,7 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UsuarioClienteDto {
     // Datos Usuario
+    private Long idUsuario;
     private String nombreCompleto;
     private String telefono;
     private String direccion;
@@ -20,9 +21,11 @@ public class UsuarioClienteDto {
     private String razonSocial;
     private String nit;
     
-    public UsuarioClienteDto(String nombreCompleto, String telefono, String tipoCliente) {
+    public UsuarioClienteDto(Long idUsuario, String nombreCompleto, String telefono, String estado, String tipoCliente) {
+        this.idUsuario = idUsuario;
         this.nombreCompleto = nombreCompleto;
         this.telefono = telefono;
+        this.estado = estado;
         this.tipoCliente = tipoCliente;
     }
 }
