@@ -11,5 +11,5 @@ public class AdminDashboardDto {
     private List<SolicitudServicioUsuarioDto> solicitudes;
     private List<UsuarioClienteDto> clientes;
     private List<SesionDto> calendario;
-    private List<ProductoDto> inventario;
+    private List<PagoDto> pagos;
 }

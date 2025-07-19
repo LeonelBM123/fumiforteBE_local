@@ -29,12 +29,13 @@ public class AdminDashboardServiceImpl implements AdminDashboardService {
         KPIsDto kpis = calcularKPIs();
 
         List<UsuarioTrabajadorDto> trabajadores = trabajadorRepository.findUsuariosTrabajadoresActivos();
-        List<SolicitudServicioUsuarioDto> solicitudes = solicitudRepository.findUltimasSolicitudesPendientes(PageRequest.of(0, 5));
-        List<UsuarioClienteDto> clientes = usuarioRepository.findClientesActivos(PageRequest.of(0, 5));
+        List<SolicitudServicioUsuarioDto> solicitudes = solicitudRepository.findUltimasSolicitudesPendientes(PageRequest.of(0, 10));
+        List<UsuarioClienteDto> clientes = usuarioRepository.findClientesActivos(PageRequest.of(0, 10));
         List<SesionDto> calendario = sesionRepository.findSesionesFuturasDelMes();
-        List<ProductoDto> inventario = productoRepository.findInventario();
+        List<PagoDto> pagos = pagoRepository.findUltimosPagos(PageRequest.of(0, 10));
 
-        return new AdminDashboardDto(kpis, trabajadores, solicitudes, clientes, calendario, inventario);
+
+        return new AdminDashboardDto(kpis, trabajadores, solicitudes, clientes, calendario, pagos);
     }
 
     private KPIsDto calcularKPIs() {

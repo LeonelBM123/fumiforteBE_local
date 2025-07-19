@@ -19,7 +19,8 @@ public interface SolicitudServicioRepository extends JpaRepository<SolicitudServ
         SELECT new com.example.fumi_forte.dto.SolicitudServicioUsuarioDto(
             ss.idSolicitudServicio,
             ss.idCliente,
-            u.nombreCompleto
+            u.nombreCompleto,
+            ss.estado
         )
         FROM SolicitudServicio ss
         JOIN Cliente c ON c.idCliente = ss.idCliente
