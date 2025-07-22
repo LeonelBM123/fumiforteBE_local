@@ -25,7 +25,7 @@ public class UsuarioReporteService {
 
         return jdbcTemplate.query(sql, new Object[]{nombre, estado, rol}, (rs, rowNum) -> {
             UsuarioReporteDto usuario = new UsuarioReporteDto();
-            usuario.setIdUsuario(rs.getInt("id_usuario"));
+            usuario.setIdUsuario(rs.getLong("id_usuario"));
             usuario.setNombreCompleto(rs.getString("nombre_completo"));
             usuario.setCorreo(rs.getString("correo"));
             usuario.setEstado(rs.getString("estado"));

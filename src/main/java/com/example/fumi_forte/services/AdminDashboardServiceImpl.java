@@ -22,7 +22,6 @@ public class AdminDashboardServiceImpl implements AdminDashboardService {
     @Autowired private PagoRepository pagoRepository;
     @Autowired private TrabajadorRepository trabajadorRepository;
     @Autowired private UsuarioRepository usuarioRepository;
-    @Autowired private ProductoRepository productoRepository;
 
     @Override
     public AdminDashboardDto obtenerDatosDashboard() {

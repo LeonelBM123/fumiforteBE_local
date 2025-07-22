@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.example.fumi_forte.controllers;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.models.Bitacora;
 import com.example.fumi_forte.models.Plaga;
 import com.example.fumi_forte.models.Producto;
@@ -44,8 +47,12 @@ public class GerenteController {
     @BitacoraLog("Listar Usuarios")
     @GetMapping("/usuarios")
     @PreAuthorize("hasAuthority('Gerente')")
-    public List<Usuario> obtenerUsuarios(){
-        return Usuarios.findAll();
+    public Page<UsuarioReporteDto> obtenerUsuarios(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "20") int size
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        return Usuarios.findAllUsuariosPages(pageable);
     }
     
     
