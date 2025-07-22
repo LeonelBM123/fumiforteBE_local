@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import com.example.fumi_forte.aspects.BitacoraLog;
+import com.example.fumi_forte.dto.UsuarioFiltroDto;
 import com.example.fumi_forte.dto.UsuarioReporteDto;
 import com.example.fumi_forte.models.Bitacora;
 import com.example.fumi_forte.models.Plaga;
@@ -18,13 +19,17 @@ import com.example.fumi_forte.repository.PlagaRepository;
 import com.example.fumi_forte.repository.ProductoRepository;
 import com.example.fumi_forte.repository.ProveedorRepository;
 import com.example.fumi_forte.repository.UsuarioRepository;
+import com.example.fumi_forte.specifications.UsuarioSpecifications;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,14 +50,27 @@ public class GerenteController {
     ProductoRepository Productos;
   
     @BitacoraLog("Listar Usuarios")
-    @GetMapping("/usuarios")
+    @PostMapping("/usuarios/filtrar")
     @PreAuthorize("hasAuthority('Gerente')")
-    public Page<UsuarioReporteDto> obtenerUsuarios(
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "20") int size
+    public Page<UsuarioFiltroDto> filtrarUsuarios(
+            @RequestBody UsuarioFiltroDto filtros,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "20") int size
     ) {
         Pageable pageable = PageRequest.of(page, size);
-        return Usuarios.findAllUsuariosPages(pageable);
+        Specification<Usuario> spec = UsuarioSpecifications.filtrar(filtros);
+        Page<Usuario> usuarios = Usuarios.findAll(spec, pageable);
+
+        return usuarios.map(u -> new UsuarioFiltroDto(
+            u.getIdUsuario(),
+            u.getNombreCompleto(),
+            u.getTelefono(),
+            u.getDireccion(),
+            u.getCorreo(),
+            u.getRol(),
+            u.getCliente() != null ? u.getCliente().getTipoCliente() : null,
+            u.getEstado()
+        ));
     }
     
     

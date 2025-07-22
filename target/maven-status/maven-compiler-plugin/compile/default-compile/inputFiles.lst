@@ -49,6 +49,7 @@ C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\exa
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\SolicitudServicioUsuarioDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\TrabajadorDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioClienteDto.java
+C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioFiltroDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioReporteDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioTrabajadorDto.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\dto\UsuarioUpdateDto.java
@@ -104,3 +105,4 @@ C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\exa
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\SolicitudReporteService.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UserDetailsServiceImpl.java
 C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\services\UsuarioReporteService.java
+C:\Users\user\Documents\NetBeansProjects\fumiforteBE_local\src\main\java\com\example\fumi_forte\specifications\UsuarioSpecifications.java

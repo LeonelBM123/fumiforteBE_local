@@ -4,6 +4,7 @@ com\example\fumi_forte\controllers\PagoCotizacionController.class
 com\example\fumi_forte\dto\SolicitudReporteDto.class
 com\example\fumi_forte\models\SolicitudServicio.class
 com\example\fumi_forte\dto\CertificadoReporteDto.class
+com\example\fumi_forte\dto\UsuarioFiltroDto.class
 com\example\fumi_forte\models\Gerente.class
 com\example\fumi_forte\repository\CotizacionRepository.class
 com\example\fumi_forte\controllers\HistorialServiciosController.class
@@ -85,6 +86,7 @@ com\example\fumi_forte\dto\KPIsDto.class
 com\example\fumi_forte\dto\CotizacionPendienteDto.class
 com\example\fumi_forte\dto\ParticipaDto.class
 com\example\fumi_forte\controllers\ReportesController.class
+com\example\fumi_forte\specifications\UsuarioSpecifications.class
 com\example\fumi_forte\models\Bitacora.class
 com\example\fumi_forte\services\AdminDashboardService.class
 com\example\fumi_forte\services\BitacoraReporteService.class

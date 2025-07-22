@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
 import org.springframework.security.config.authentication.PasswordEncoderParser;
@@ -41,4 +42,9 @@ public class Usuario {
     
     @Column(name= "estado", nullable = false, length = 15)
     private String estado;
+    
+    @OneToOne(mappedBy = "usuario")
+    private Cliente cliente;
+
 }
+    
